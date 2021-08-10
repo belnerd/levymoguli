@@ -1,0 +1,44 @@
+<%- include('partials/header'); %>
+    </head>
+    <body>
+        <%- include('partials/navbar'); %>
+        <div class="container">
+            <% if (type === 'USER' ) { %>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Bändin id</th>
+                                <th>Bändin nimi</th>
+                                <th>Artistin id</th>
+                                <th>Etunimi</th>
+                                <th>Sukunimi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% for (var a of data) { %>
+                                <tr>
+                                    <td>
+                                        <%= a.bandid%>
+                                    </td>
+                                    <td>
+                                        <%= a.bandname %>
+                                    </td>
+                                    <td>
+                                        <%= a.artistid %>
+                                    </td>
+                                    <td>
+                                        <%= a.firstname %>
+                                    </td>
+                                    <td>
+                                        <%= a.lastname %>
+                                    </td>
+                                </tr>
+                                <%} %>
+                        </tbody>
+                    </table>
+                </div>
+                <% } %>
+        </div>
+    </body>
+    </html>

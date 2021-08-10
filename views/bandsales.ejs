@@ -1,0 +1,36 @@
+<%- include('partials/header'); %>
+    </head>
+    <body>
+        <%- include('partials/navbar'); %>
+        <div class="container">
+            <% if (type === 'USER' ) { %>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Bändi</th>
+                                <th>Levy</th>
+                                <th>Myynti</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% for (var a of data) { %>
+                                <tr>
+                                    <td>
+                                        <%= a.Bändi%>
+                                    </td>
+                                    <td>
+                                        <%= a.Levy %>
+                                    </td>
+                                    <td>
+                                        <%= a.Myynti %>
+                                    </td>
+                                </tr>
+                                <%} %>
+                        </tbody>
+                    </table>
+                </div>
+                <% } %>
+        </div>
+    </body>
+    </html>

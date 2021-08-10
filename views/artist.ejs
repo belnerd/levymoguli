@@ -1,0 +1,31 @@
+<%- include('partials/header'); %>
+    </head>
+    <body>
+        <%- include('partials/navbar'); %>
+        <div class="container">
+            <% if (update) { %> <b>Tiedot päivitetty</b><br/> <%} %>
+            <% if (type === 'USER' ) { %>
+                <form method="post">
+                    <div class="form-group col-7">
+                    <label for="artistId">Artistin Id</label>
+                    <input type="text" class="form-control" id="artistId" name="artistId" placeholder="<%= data.artistid%>" value="<%= data.artistid%>" readonly>
+                    </div>
+                    <div class="form-group col-7">
+                    <label for="firstname">Etunimi</label>
+                    <input type="text" class="form-control" id="firstname" name="firstname" placeholder="<%= data.firstname %>" value="<%= data.firstname %>">
+                    </div>
+                    <div class="form-group col-7">
+                    <label for="lastname">Sukunimi</label>
+                    <input type="text" class="form-control" id="lastname" name="lastname" placeholder="<%= data.lastname %>" value="<%= data.lastname %> ">
+                    </div>
+                    <div class="form-group col-7">
+                    <label for="contract">Sopimus</label>
+                    <input type="text" class="form-control" id="contract" name="contract" placeholder="<%= data.contract %>" value="<%= data.contract %> ">
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="save" name="save" formaction="/artists/edit" onclick="return confirm('Haluatko tallentaa muutokset?')">Tallenna</button>
+                    <button type="submit" class="btn btn-danger" id="delete" name="delete" formaction="/artists/delete" onclick="return confirm('Haluatko poistaa artistin?')">Poista</button>
+                </form>
+            <% } %>
+        </div>
+    </body>
+    </html>

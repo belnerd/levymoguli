@@ -1,0 +1,45 @@
+<%- include('partials/header'); %>
+    </head>
+    <body>
+        <%- include('partials/navbar'); %>
+        <div class="container">
+            <% if (deleted) { %> <b>Artisti poistettu</b><br/> <%} %>
+            <% if (added) { %> <b>Artisti lisätty</b><br/> <%} %>
+            <% if (type === 'USER' ) { %>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Artistin id</th>
+                                <th>Etunimi</th>
+                                <th>Sukunimi</th>
+                                <th>Sopimus</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% for (var a of data) { %>
+                                <tr>
+                                    <td>
+                                        <%= a.artistid%>
+                                    </td>
+                                    <td>
+                                        <%= a.firstname %>
+                                    </td>
+                                    <td>
+                                        <%= a.lastname %>
+                                    </td>
+                                    <td>
+                                        <%= a.contract %>
+                                    </td>
+                                    <td>
+                                        <a href="/artists/<%= a.artistid%>">Muokkaa</a>
+                                    </td>
+                                </tr>
+                                <%} %>
+                        </tbody>
+                    </table>
+                </div>
+                <% } %>
+        </div>
+    </body>
+    </html>

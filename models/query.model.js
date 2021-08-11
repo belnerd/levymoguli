@@ -47,7 +47,7 @@ module.exports = {
     async listMemberSales() {
         try {
             conn = await pool.getConnection()
-            sql = 'SELECT * FROM bandsalespermember'
+            sql = 'SELECT * FROM BandSalesPerMember'
             const rows = await conn.query(sql)
             conn.end()
             return rows

@@ -4,18 +4,14 @@
         <%- include('partials/navbar'); %>
         <div class="container">
             <% if (type === 'USER' ) { %>
-                <form method="post" class="needs-validation" novalidate>
+                <form method="post">
                     <div class="col-7">
                     <label for="firstname">Etunimi</label>
                     <input type="text" class="form-control mb-2" id="firstname" name="firstname" placeholder="Etunimi" required>
-                    <div class="valid-feedback">OK</div>
-                    <div class="invalid-feedback">Syötä etunimi</div>
                     </div>
                     <div class="col-7">
                     <label for="lastname">Sukunimi</label>
                     <input type="text" class="form-control mb-2" id="lastname" name="lastname" placeholder="Sukunimi" required>
-                    <div class="valid-feedback">OK</div>
-                    <div class="invalid-feedback">Syötä sukunimi</div>
                     </div>
                     <div class="col-7">
                     <label for="contract">Sopimus</label>

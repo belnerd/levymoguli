@@ -1,7 +1,9 @@
+// Handle login/logout
 const express = require('express')
 const router = express.Router()
 const model = require('../models/user.model')
 
+// GET check if already authenticated
 router.get('/', function (request,response) {
     if (request.isAuthenticated()) {
         if (request.user.type === 'ADMIN') {
@@ -14,6 +16,7 @@ router.get('/', function (request,response) {
     }
 })
 
+// POST check the user credentials and act accordingly
 router.post('/', async function (request, response) {
     areValid = await model.areValidCredentials(request.body.username, request.body.passw)
 
@@ -32,6 +35,8 @@ router.post('/', async function (request, response) {
         })
     }
 })
+
+// POST handle logout
 router.post('/logout', function (request, response) {
     request.logOut()
     response.redirect('/login')

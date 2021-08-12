@@ -1,3 +1,4 @@
+// Model for database queries regarding user profiles
 pool = require('../utils/db.js')
 module.exports = {
     async read(username) {

@@ -1,3 +1,4 @@
+// Module for user and session control
 const session = require('express-session')
 const passport = require('passport')
 const usersModel = require('../models/user.model')

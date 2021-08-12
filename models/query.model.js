@@ -1,3 +1,5 @@
+// Model for database queries
+// Function names should be descriptive enough...
 pool = require('../utils/db.js')
 module.exports = {
     async listArtistsSales() {
